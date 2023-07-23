@@ -1,0 +1,15 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.weather-field {
+    font-size: 1.5em;
+    color: #a0a1a4;
+    outline: none;
+    border: none;
+    border-bottom: 0.7px solid black;
+    margin: 10px;
+}

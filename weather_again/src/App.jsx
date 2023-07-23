@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import getWeatherData from "./services/WethearApi";
 import WethearForm from "./components/WeatherForm";
 import WeatherBlock from "./components/Weatherblock";
+import './index.css'
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -18,7 +19,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="centered-div">
       <WethearForm city={city} setCity={setCity} handleFetching={handleFetchingWeather} />
       {weatherData && <WeatherBlock data={weatherData} />}
     </div>
