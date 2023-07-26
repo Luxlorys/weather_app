@@ -21,7 +21,7 @@ export default function WethearForm({ city, setCity, weatherData, setWeatherData
                     feels_like: data.main.feels_like,
                     temp_max: data.main.temp_max,
                     temp_min: data.main.temp_min,
-                    icon_code: data.weather.icon,
+                    icon_code: data.weather[0].icon,
                 }
             
             setWeatherData([...weatherData, newCityData])
