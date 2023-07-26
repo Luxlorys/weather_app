@@ -1,26 +1,15 @@
 import { useState } from "react";
-import getWeatherData from "./services/WethearApi";
 import WethearForm from "./components/WeatherForm";
 import WeatherBlock from "./components/Weatherblock";
 import './index.css'
 
 function App() {
-  const [weatherData, setWeatherData] = useState(null);
+  const [weatherData, setWeatherData] = useState([]);
   const [city, setCity] = useState("");
-
-  const handleFetchingWeather = (e) => {
-    e.preventDefault();
-
-    getWeatherData(city).then((data) => {
-      setWeatherData(data);
-    }).catch(error => {
-      console.error('fetching error', error);
-    });
-  };
 
   return (
     <div className="centered-div">
-      <WethearForm city={city} setCity={setCity} handleFetching={handleFetchingWeather} />
+      <WethearForm city={city} setCity={setCity} weatherData={weatherData} setWeatherData={setWeatherData} />
       {weatherData && <WeatherBlock data={weatherData} />}
     </div>
   );
